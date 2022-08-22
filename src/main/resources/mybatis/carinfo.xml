@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rentcar.carinfo.mapper.CarinfoMapper">
+
+    <update id="mapupdate" parameterType="com.rentcar.carinfo.model.CarinfoDTO">
+        update carinfo
+        set
+        x = #{x},
+        y = #{y}
+        where carnumber = #{carnumber}
+    </update>
+
+    <update id="updateFile" parameterType="com.rentcar.carinfo.model.CarinfoDTO">
+        update carinfo
+        set
+        carimage = #{carimage}
+        where carnumber = #{carnumber}
+    </update>
+    <delete id="delete" parameterType="String">
+        delete from carinfo
+        where carnumber =#{carnumber}
+    </delete>
+
+    <insert id="create" parameterType="com.rentcar.carinfo.model.CarinfoDTO">
+        insert into carinfo
+        (carnumber, carname, carimage, rentcost, carseate, carpoint, category, caryearmodel, rentstatus, x, y)
+        values(#{carnumber}, #{carname}, #{carimage}, #{rentcost}, #{carseate}, #{carpoint}, #{category},#{caryearmodel}, #{rentstatus}, #{x}, #{y})
+    </insert>
+
+    <select id="list" parameterType="Map" resultType="com.rentcar.carinfo.model.CarinfoDTO">
+        select carname, carimage, rentcost, carseate, carnumber, carpoint, category, caryearmodel,rentstatus
+        from carinfo
+        <where>
+            <choose>
+                <when test="col=='category'">
+                    category like concat('%',#{word},'%')
+                </when>
+                <when test="col=='carname'">
+                    carname like concat('%',#{word},'%')
+                </when>
+            </choose>
+        </where>
+        order by carnumber asc
+        limit ${sno}, #{eno}
+    </select>
+
+    <select id="total" parameterType="Map" resultType="int">
+        select count(*) from carinfo
+        <where>
+            <choose>
+                <when test="col=='category'">
+                    category like concat('%',#{word},'%')
+                </when>
+                <when test="col=='carname'">
+                    carname like concat('%',#{word},'%')
+                </when>
+            </choose>
+        </where>
+    </select>
+
+    <resultMap id="carinfoOption" type="com.rentcar.carinfo.model.CarinfoDTO">
+        <result property="carnumber" column="carnumber" />
+        <result property="carname" column="carname" />
+        <result property="rentcost" column="rentcost" />
+        <result property="category" column="category" />
+        <result property="carpoint" column="carpoint" />
+        <result property="caryearmodel" column="caryearmodel" />
+        <result property="carimage" column="carimage" />
+        <result property="carseate" column="carseate" />
+        <result property="rentstatus" column="rentstatus" />
+        <result property="x" column="x" />
+        <result property="y" column="y" />
+
+        <association property="cdto" javaType="com.rentcar.carinfo.model.CaroptionDTO">
+            <result property="bluetooth" column="bluetooth" />
+            <result property="rear_sensor" column="rear_sensor" />
+            <result property="rear_camera" column="rear_camera" />
+            <result property="black_box" column="black_box" />
+            <result property="heated_seat" column="heated_seat" />
+            <result property="heated_handle" column="heated_handle" />
+            <result property="ventilated_seat" column="ventilated_seat" />
+            <result property="navigation" column="navigation" />
+            <result property="non_smoking_vehicle" column="non_smoking_vehicle" />
+            <result property="smart_key" column="smart_key" />
+            <result property="sunroof" column="sunroof" />
+            <result property="rear_warning_light" column="rear_warning_light" />
+            <result property="lane_departure_prevention" column="lane_departure_prevention" />
+        </association>
+    </resultMap>
+
+    <select id="read" parameterType="String" resultMap="carinfoOption">
+        select c.carnumber, c.carname, c.rentcost, c.category, c.carpoint, c.caryearmodel, c.carimage, c.carseate, c.rentstatus, c.x, c.y,
+        o.bluetooth, o.rear_sensor, o.rear_camera, o.black_box, o.heated_seat, o.heated_handle, o.ventilated_seat, o.navigation, o.non_smoking_vehicle,
+        o.smart_key, o.sunroof, o.rear_warning_light, o.lane_departure_prevention
+        from carinfo c inner join caroption o
+        on c.carnumber = o.carnumber
+        where c.carnumber = #{carnumber}
+    </select>
+
+    <update id="update" parameterType="com.rentcar.carinfo.model.CarinfoDTO">
+        update carinfo
+        set
+        carname = #{carname},
+        rentcost = #{rentcost},
+        category = #{category},
+        caryearmodel = #{caryearmodel},
+        carseate = #{carseate},
+        carpoint = #{carpoint},
+        rentstatus = #{rentstatus}
+        where carnumber =#{carnumber}
+    </update>
+</mapper>

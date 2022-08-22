@@ -1,0 +1,51 @@
+version: '3.0'
+services:
+  evrent1:
+    container_name: evrent1
+    build: .
+    ports:
+      - 9090:9090
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Wotjd@487
+      MYSQL_PORT: 3306
+    volumes:
+      - .:/usr/src
+    restart:
+      always
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+  evrent2:
+    container_name: evrent2
+    build: .
+    ports:
+      - 9091:9090
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Wotjd@487
+      MYSQL_PORT: 3306
+    volumes:
+      - .:/usr/src
+    restart:
+      always
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: rent_car
+      MYSQL_ROOT_PASSWORD: Wotjd@487
+    volumes:
+      - "/var/lib/mysql:/docker-entrypoint-initdb.d"
+    ports:
+      - 3307:3306

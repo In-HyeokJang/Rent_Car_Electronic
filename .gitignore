@@ -1,0 +1,18 @@
+!gradle/wrapper/gradle-wrapper.jar
+!src/main/main/**/build/
+!**/src/test/**/build/
+
+/src/main/resources/*.properties
+/src/main/resources/application.properties
+/src/main/resources/kakao.properties
+
+/build
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!src/main/main/**/out/
+!**/src/test/**/out/

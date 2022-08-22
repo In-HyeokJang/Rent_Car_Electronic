@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rentcar.carinfo.mapper.CaroptionMapper">
+
+    <insert id="create" parameterType="com.rentcar.carinfo.model.CaroptionDTO">
+        insert into caroption(bluetooth, rear_sensor, rear_camera, black_box, heated_seat, heated_handle,
+        ventilated_seat, navigation, non_smoking_vehicle, smart_key, sunroof ,rear_warning_light,
+        lane_departure_prevention, carnumber)
+
+        values(#{bluetooth}, #{rear_sensor}, #{rear_camera}, #{black_box}, #{heated_seat}, #{heated_handle},
+        #{ventilated_seat}, #{navigation}, #{non_smoking_vehicle}, #{smart_key}, #{sunroof} , #{rear_warning_light},
+        #{lane_departure_prevention}, #{carnumber})
+    </insert>
+
+    <update id="update" parameterType="com.rentcar.carinfo.model.CaroptionDTO">
+        update caroption
+        set
+        bluetooth = #{bluetooth},
+        rear_sensor = #{rear_sensor},
+        rear_camera = #{rear_camera},
+        black_box = #{black_box},
+        heated_seat = #{heated_seat},
+        heated_handle = #{heated_handle},
+        ventilated_seat = #{ventilated_seat},
+        navigation = #{navigation},
+        non_smoking_vehicle = #{non_smoking_vehicle},
+        smart_key = #{smart_key},
+        sunroof = #{sunroof},
+        rear_warning_light = #{rear_warning_light},
+        lane_departure_prevention = #{lane_departure_prevention}
+        where carnumber = #{carnumber}
+    </update>
+</mapper>
