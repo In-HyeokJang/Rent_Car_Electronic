@@ -10,11 +10,7 @@
 
 ![KakaoTalk_20220817_202019568](https://user-images.githubusercontent.com/65659478/185111861-93f48934-161c-492d-9acc-34acb6a1707f.png)
 
-
-
-
 <br>
-
 
 ## INTRO
 
@@ -22,7 +18,7 @@
 
 <br>
 
-#  🛠 Tools 🛠
+# 🛠 Tools 🛠
 
 <div align="center">
 
@@ -45,7 +41,6 @@
 ![AWS](https://img.shields.io/badge/NAVER-03C75A.svg?style=for-the-badge&logo=Naver&logoColor=white)
 ![Nginx](https://img.shields.io/badge/NginX-009639.svg?style=for-the-badge&logo=NginX&logoColor=white)
 
-
 </div>
 
 <br>
@@ -53,7 +48,6 @@
 <br>
 
 # 🐋 Team Member 🐋
-
 
 <table>
 <tr>
@@ -66,18 +60,15 @@
 <td><img src="https://avatars.githubusercontent.com/u/105375124?v=4" style="width:100px; height:100px;"></td>
 </tr>
 <tr>
+<td style="text-align: center;"><a href="https://github.com/In-HyeokJang">장인혁</a></td>
 <td style="text-align: center;"><a href="https://github.com/KIM-JS-95">김재성</a></td>
 <td style="text-align: center;"><a href="https://github.com/mryoon1020">윤덕구</a></td>
-<td style="text-align: center;"><a href="https://github.com/KSJ0413">김성진</a></td>
 
-<td style="text-align: center;"><a href="https://github.com/In-HyeokJang">장인혁</a></td>
+<td style="text-align: center;"><a href="https://github.com/KSJ0413">김성진</a></td>
 <td style="text-align: center;"><a href="https://github.com/ownage02">김정우</a></td>
 <td style="text-align: center;"><a href="https://github.com/yuseons">서유선</a></td>
 </tr>
 </table>
-
-
-
 
 # 🐋 Deploy road map 🐋
 
@@ -86,8 +77,6 @@
 <img src="https://user-images.githubusercontent.com/65659478/185040384-3084855e-bd0f-4260-866e-e0eb321f9475.png">
 
 </div>
-
-
 
 # 💊 Reference
 
@@ -108,10 +97,8 @@
 
 <div style="width:200px; height:200px;">
 <img src="https://user-images.githubusercontent.com/65659478/185056695-ff0e0e26-efeb-408d-9f46-be5bce005842.png">
-<a href="evrent.ml"> 프로젝트 홈페이지</a>
+<a href="https://evrent.ml/"> 프로젝트 홈페이지</a>
 <br>
 <br>
 </div>
 </div>
-
-

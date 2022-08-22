@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <title>회원정보변경 | 제주패스</title>
+  <title>회원정보변경 </title>
   <!-- Google Tag Manager -->
 <script>
 var gtmId = location.href.startsWith('https://d') ? 'GTM-P9NT8ML' : 'GTM-KXVKM3C';

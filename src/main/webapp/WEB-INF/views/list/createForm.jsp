@@ -2,16 +2,10 @@
 
   <!DOCTYPE html>
   <html>
-
   <head>
     <title>notice</title>
     <meta charset="utf-8">
-
-
-
-
   </head>
-
   <body>
     <div class="container">
  <h1>맛집 추가</h1>
