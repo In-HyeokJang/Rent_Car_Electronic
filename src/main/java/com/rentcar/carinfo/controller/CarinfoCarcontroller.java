@@ -2,6 +2,7 @@ package com.rentcar.carinfo.controller;
 
 
 import com.rentcar.utility.Ncloud.service.AwsS3Service;
+import com.rentcar.utility.Uploadall;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,10 +27,10 @@ import java.util.Map;
 @Controller
 //@RequestMapping("/carinfo")
 @RequiredArgsConstructor
-public class CarinfoCarcontroller {
+public class CarinfoController {
 
 
-    private static final Logger log = LoggerFactory.getLogger(CarinfoCarcontroller.class);
+    private static final Logger log = LoggerFactory.getLogger(CarinfoController.class);
 
     @Autowired
     @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
@@ -57,12 +58,18 @@ public class CarinfoCarcontroller {
 
 
     @PostMapping("/carinfo/updateFile")
-    public String updateFile(MultipartFile filenameMF, CarinfoDTO dto, HttpServletRequest request
+    public String updateFile(MultipartFile filenameMF, HttpServletRequest request, String oldfile, String carnumber
     ) throws IOException {
+        String basePath = Uploadall.getCarinfoDir();
+        if(oldfile != null && !oldfile.equals("default.jpg")){
+            Utility.deleteFile(basePath, oldfile);
+        }
+        Map map = new HashMap();
+        map.put("carnumber", carnumber);
+        map.put("carimage", Utility.saveFileSpring(filenameMF, basePath));
 
-        int cnt = service.updateFile(dto);
+        int cnt = service.updateFile(map);
         if (cnt == 1) {
-
             return "redirect:/carinfo/list";
         } else {
             return "error";
@@ -105,9 +112,9 @@ public class CarinfoCarcontroller {
     @GetMapping("/user/carinfo/read/{carnumber}")
     public String read(@PathVariable("carnumber") String carnumber, Model model) {
         CarinfoDTO dto = service.read(carnumber);
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
-        log.info("read dto: " + dto);
-        System.out.println(dto);
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
+//        log.info("read dto: " + dto);
+//        System.out.println(dto);
         model.addAttribute("dto", dto);
         return "/carinfo/read";
     }
@@ -116,7 +123,14 @@ public class CarinfoCarcontroller {
     @PostMapping("/carinfo/create")
     public String create(CarinfoDTO dto, HttpServletRequest request
     ) throws IOException {
-
+        String upDir = Uploadall.getCarinfoDir();
+        String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
+        int size = (int)dto.getFilenameMF().getSize();
+        if(size > 0 ){
+            dto.setCarimage(fname);
+        }else {
+            dto.setCarimage("default.jpg");
+        }
         if (service.create(dto) > 0) {
             return "/carinfo/optcreate";
         } else {
