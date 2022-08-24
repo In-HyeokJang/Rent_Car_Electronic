@@ -1,8 +1,7 @@
 package com.rentcar.config;
 
 
-import com.rentcar.utility.UploadList;
-
+import com.rentcar.utility.Uploadall;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -25,5 +24,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         registry.addResourceHandler("/notice/fileDown")
                 .addResourceLocations("file:///D:/Github_upload/projectSaveF/files/");
 
+        registry.addResourceHandler("/carinfo/storage/**")
+                .addResourceLocations("file:///" + Uploadall.getCarinfoDir());
     }
 }
