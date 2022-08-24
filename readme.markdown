@@ -1,7 +1,3 @@
-<br>
-<br>
-<br>
-
 # 🚗 EV RENT CAR 🚗
 
 ## Electric Vehicle Rent Car Service
@@ -32,8 +28,8 @@
 <td style="text-align: center;"><a href="https://github.com/ownage02">김정우</a></td>
 <td style="text-align: center;"><a href="https://github.com/yuseons">서유선</a></td>
 </tr>
+</table>
   <br>
-<br>
 
 # 2. Tools
 
