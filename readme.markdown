@@ -2,8 +2,6 @@
 <br>
 <br>
 
-<div align="center">
-
 # 🚗 EV RENT CAR 🚗
 
 ## Electric Vehicle Rent Car Service
@@ -39,8 +37,6 @@
 
 # 2. Tools
 
-<div align="center">
-
 ## 🍃 Language & FrameWork
 
 ![s](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
@@ -59,8 +55,6 @@
 ![Jenkins](https://img.shields.io/badge/jenkins-D24939.svg?style=for-the-badge&logo=jenkins&logoColor=white)
 ![AWS](https://img.shields.io/badge/NAVER-03C75A.svg?style=for-the-badge&logo=Naver&logoColor=white)
 ![Nginx](https://img.shields.io/badge/NginX-009639.svg?style=for-the-badge&logo=NginX&logoColor=white)
-
-</div>
 
 #### `Back-end`
 
