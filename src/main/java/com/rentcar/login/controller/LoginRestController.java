@@ -1,9 +1,7 @@
 package com.rentcar.login.controller;
 
 import com.rentcar.login.service.LoginService;
-import com.rentcar.utility.Ncloud.AwsS3;
-import com.rentcar.utility.Ncloud.service.AwsS3Service;
-import com.rentcar.utility.UploadLicense;
+import com.rentcar.utility.Uploadall;
 import com.rentcar.utility.Utility;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,10 +42,10 @@ public class LoginRestController {
     @PostMapping("/license")
     public ResponseEntity<Map> licInfo(MultipartFile fname) {
 
-        String upDir = UploadLicense.getUploadDir();
+        String upDir = Uploadall.getUploadDir();
         String fname2 = Utility.saveFileSpring(fname, upDir);
 
-        String imageFile = UploadLicense.getUploadDir() + "\\" + fname2;
+        String imageFile = Uploadall.getUploadDir() + "\\" + fname2;
 
         Map map = new HashMap();
 

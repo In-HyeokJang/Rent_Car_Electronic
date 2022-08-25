@@ -8,10 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +18,7 @@ import java.io.IOException;
 @RestController
 //@RequestMapping("/carinfo")
 public class CaroptionController {
-    private static final Logger log = LoggerFactory.getLogger(CarinfoCarcontroller.class);
+    private static final Logger log = LoggerFactory.getLogger(CarinfoController.class);
     @Autowired
     @Qualifier("com.rentcar.carinfo.service.CaroptionServiceImpl")
     private CaroptionService service;

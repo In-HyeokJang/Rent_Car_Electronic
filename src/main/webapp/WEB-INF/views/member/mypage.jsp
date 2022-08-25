@@ -12,10 +12,11 @@
     <script class="u-script" type="text/javascript" src="/js/member/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.14.1, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-
-
-
-
+    <style>
+    .info{
+    margin-left: 400px;
+    }
+    </style>
   </head>
   <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-0df1"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
 
@@ -27,10 +28,6 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Page-1.html">Page 1</a>
 </li></ul>
               </div>
             </div>
@@ -41,21 +38,16 @@
     <section class="u-clearfix u-section-1" id="sec-c9d0">
       <div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-image u-image-default u-preserve-proportions u-image-1" src="/images/SJ/mypage/premium-icon-member-card-3945150.png" alt="" data-image-width="512" data-image-height="512">
-        <h3 class="u-text u-text-default u-text-1">김길동 님의</h3>
+        <h3 class="u-text u-text-default u-text-1">${dto.mname} 님의</h3>
 
+    <div class="info">
         <a href="/exception/user/update" class="u-border-none u-btn u-btn-round u-button-style u-radius-30 u-btn-1">&nbsp;정보 수정</a>
         <a href="/user/member/reservation" class="u-border-none u-btn u-btn-round u-button-style u-radius-30 u-text-body-alt-color u-btn-2">예약 정보</a>
+        </div>
+
         <h3 class="u-text u-text-default u-text-palette-1-base u-text-2">회 원 정 보</h3>
         <h2 class="u-text u-text-default u-text-3">나의 정보</h2>
 
-        <div class="u-align-left u-container-style u-custom-color-1 u-group u-radius-50 u-shape-round u-group-1">
-          <div class="u-container-layout u-container-layout-1">
-            <a href="" class="u-active-none u-border-none u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-text-white u-top-left-radius-0 u-top-right-radius-0 u-btn-3">0P &gt;</a>
-            <a href="" class="u-active-none u-border-none u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-text-white u-top-left-radius-0 u-top-right-radius-0 u-btn-4">0P &gt;</a>
-            <h3 class="u-text u-text-default u-text-grey-15 u-text-4">충전포인트</h3>
-            <h3 class="u-text u-text-default u-text-grey-15 u-text-5">적립포인트</h3>
-          </div>
-        </div>
         <div class="u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
@@ -87,8 +79,11 @@
               </tr>
             </tbody>
           </table>
+          <br>
+          <h3 class="u-text u-text-default u-text-grey-15 u-text-5">적립포인트</h3>
+          <p>point 추가 해야함</p>
+
         </div>
-        <img class="u-image u-image-round u-radius-50 u-image-2" src="/images/SJ/mypage/skyy.jpg" alt="" data-image-width="367" data-image-height="137">
       </div>
     </section>
 

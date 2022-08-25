@@ -50,7 +50,7 @@
                 <input type="hidden" class="form-control" id="rentstatus" name="rentstatus" value="${dto.rentstatus}">
                 <input type="hidden" class="form-control" id="x" name="x" value="${dto.x}">
                 <input type="hidden" class="form-control" id="y" name="y" value="${dto.y}">
-                <img class="img" src="${dto.carimage}" style="width:400px;" , height="260px;">
+                <img class="img" src="/carinfo/storage/${dto.carimage}" style="width:400px;" , height="260px;">
 
                 <h2 class="carname">${dto.carname}</h2>
 
@@ -143,9 +143,9 @@
                 <div class="Abtn">
                   <a href="/admin/carinfo/update/${dto.carnumber}" class="btn btn-defaul">정보 수정</a>
 
-                  <button onclick="optupdate()" class="btn btn-defaul">옵션 수정</button>
-
                   <a href="/admin/carinfo/updateFile/${dto.carnumber}" class="btn btn-defaul">사진 수정</a>
+
+                  <button onclick="optupdate()" class="btn btn-defaul">옵션 수정</button>
 
                   <button onclick="mapupdate()" class="btn btn-defaul">차위치수정</button>
                 </div>

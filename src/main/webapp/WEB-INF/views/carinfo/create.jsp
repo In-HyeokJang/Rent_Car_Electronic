@@ -98,7 +98,7 @@
         
       </div>
     </body>
-<script>
+<!-- <script>
         $("#filenameMF").change(function(){
         data = new FormData();
         data.append("filenameMF", $("input[name=filenameMF]")[0].files[0]);
@@ -120,5 +120,5 @@
           }
         });
       });
-</script>
+</script> -->
     </html>
