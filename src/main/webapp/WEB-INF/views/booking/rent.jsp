@@ -66,10 +66,10 @@
                         <p class="tit">차종 선택</p>
                         <ul class ="frmBox">
                             <span id="checked"></span>
-                            <li><input type="radio" name="category" id="category" value="1" checked><label>소형</label></li>
-                            <li><input type="radio" name="category" id="category" value="2"><label>중형</label></li>
-                            <li><input type="radio" name="category" id="category" value="3"><label>대형</label></li>
-                            <li><input type="radio" name="category" id="category" value="4"><label>SUV</label></li>
+                            <li><input type="checkbox" name="category" id="category" value="1" checked><label>소형</label></li>
+                            <li><input type="checkbox" name="category" id="category" value="2"><label>중형</label></li>
+                            <li><input type="checkbox" name="category" id="category" value="3"><label>대형</label></li>
+                            <li><input type="checkbox" name="category" id="category" value="4"><label>SUV</label></li>
                         </ul>
                     </ul>
                 </div>

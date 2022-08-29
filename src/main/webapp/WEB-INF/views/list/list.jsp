@@ -40,7 +40,9 @@
                 </span>
 
                 <button class="btn btn-default">검색</button>
+                <c:if test="${sessionScope.grade == 'A'}">
                 <button type="button" class="btn btn-default" id="create_btn">등록</button>
+                </c:if>
               </div>
             </form>
 

@@ -63,22 +63,14 @@ p {
 
   .form-block {
   background: #fff;
-  padding: 60px;
   -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); }
-  @media (max-width: 991.98px) {
-    .form-block {
-      padding: 30px; } }
 
   .form-block_2 {
   background: #F8FFFF;
-  padding: 60px;
+
   -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); }
-  @media (max-width: 991.98px) {
-    .form-block {
-      padding: 30px; } }
-
  .find{
 	font-size:15px;
 }
@@ -167,10 +159,7 @@ padding:20px;
 }
 .list_info input{
     margin-bottom: 25px;
-    border: none;
-    padding: 0 20px;
     box-sizing: border-box;
-    background-color:#e3f2fd;
 	    width: 300px;
 	    height: 40px;
 }

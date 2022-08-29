@@ -43,8 +43,6 @@
             <div class="dropdown-content">
               <a href="/notice/list">공지사항</a>
               <a href="/user/contents/list">자유게시판</a>
-
-              <a href="#">xx</a>
             </div>
           </div>
 
@@ -89,7 +87,7 @@
                     <span class="item__text">Admin</span>
                 </li>
                     <div class="dropdown-content">
-                      <a href="/admin/carinfo/list">차량리스트</a>
+                      <a href="/carinfo/list">차량리스트</a>
                       <a href="/exception/admin/user/list">회원목록</a>
                       <a href="/user/booking/list">예약 현황</a>
                       <a href="/map/facilities/create">가게 등록</a>
