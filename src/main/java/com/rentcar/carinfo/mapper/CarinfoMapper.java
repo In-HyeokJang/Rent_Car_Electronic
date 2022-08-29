@@ -16,7 +16,6 @@ public interface CarinfoMapper {
     CarinfoDTO read(String carnumber);
     int update(CarinfoDTO dto);
     int delete(String carnumber);
-    int updateFile(CarinfoDTO dto);
     int updateFile(Map map);
     int create(CaroptionDTO cdto);
     int mapupdate(CarinfoDTO dto);

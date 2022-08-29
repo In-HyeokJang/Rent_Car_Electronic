@@ -1,11 +1,7 @@
 package com.rentcar.notice.controller;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
@@ -15,15 +11,13 @@ import com.rentcar.notice.service.NoticeService;
 import com.rentcar.utility.Ncloud.AwsS3;
 import com.rentcar.utility.Ncloud.AwsS3Config;
 import com.rentcar.utility.Ncloud.service.AwsS3Service;
-import com.rentcar.utility.UploadLicense;
-import com.rentcar.utility.UploadList;
+import com.rentcar.utility.Uploadall;
 import com.rentcar.utility.Utility;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +29,6 @@ import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.http.HttpRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,7 +67,7 @@ public class NoticeController {
         map.put("fname", fname);
         String objectName = service.readfile(map);
 
-        String upDir = UploadList.getNoticeDir();
+        String upDir = Uploadall.getNoticeDir();
 
 
         try {
