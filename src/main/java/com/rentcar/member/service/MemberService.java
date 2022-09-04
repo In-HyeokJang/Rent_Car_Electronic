@@ -7,7 +7,6 @@ import com.rentcar.member.model.MemberDTO;
 
 //@Service
 public interface MemberService {
-
     MemberDTO mypage(String id);
 
     String reservation(String id);

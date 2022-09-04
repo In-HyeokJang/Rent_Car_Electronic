@@ -16,6 +16,11 @@ public class LoginServiceImpl implements LoginService {
   private LoginMapper mapper;
 
   @Override
+  public LoginDTO mypage(String id) {
+    return mapper.mypage(id);
+  }
+
+  @Override
   public int loginCheck(Map<String, String> map) {
     // TODO Auto-generated method stub
     return mapper.loginCheck(map);

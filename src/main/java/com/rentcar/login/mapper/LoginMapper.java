@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface LoginMapper {
+  LoginDTO mypage(String id);
 
   int loginCheck(Map<String, String> map);
   

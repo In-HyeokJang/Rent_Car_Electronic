@@ -6,6 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.rentcar.login.mapper.LoginMapper">
 
+	<select id="mypage" parameterType="String"
+			resultType="com.rentcar.login.model.LoginDTO">
+		select *
+		from user
+		where id = #{id}
+	</select>
 
 	<select id="passCheck" parameterType="Map" resultType="int">
 		select

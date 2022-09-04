@@ -33,6 +33,17 @@ public class LoginController {
     private LoginService service;
 
 
+    @GetMapping("/user/mypage")
+    public String mypage(HttpSession seesion, Model model){
+        String id = (String) seesion.getAttribute("id");
+        if(id == null){
+            return "redirect:/user/login";
+        }else {
+            LoginDTO dto = service.mypage(id);
+            model.addAttribute("dto", dto);
+        }
+        return "/user/mypage";
+    }
 
     @GetMapping("/admin/user/delete")
     public String delete(String id) {
@@ -40,16 +51,13 @@ public class LoginController {
         service.delete(id);
 
         return "redirect:/exception/admin/user/list";
-
     }
 
     @PostMapping("/admin/user/update")
     public String updateU(LoginDTO dto, Model model) {
         int cnt = service.update(dto);
-
         if (cnt == 1) {
             model.addAttribute("id", dto.getId());
-
             return "redirect:/exception/admin/user/list";
         } else {
             return "error";
@@ -58,13 +66,9 @@ public class LoginController {
 
     @GetMapping("/admin/user/update")
     public String updateU(String id, Model model) {
-
         LoginDTO dto = service.read(id);
-
         //log.info("dto:"+dto);
-
         model.addAttribute("dto", dto);
-
         return "/user/update";
 
     }
@@ -78,24 +82,16 @@ public class LoginController {
         map.put("passwd", passwd);
 
         int pflag = service.passCheck(map);
-
-
         if (pflag == 1) {
-
             service.delete(id);
-
-
         }else {
             ra.addFlashAttribute("msg", false);
-
             return "redirect:/user/delete";
         }
 
         session.invalidate();
         return "redirect:/";
     }
-
-
 
     @GetMapping("/user/delete")
     public String delete(String id, HttpSession session, Model model){
@@ -173,7 +169,7 @@ public class LoginController {
         if (cnt == 1) {
             model.addAttribute("id", dto.getId());
 
-            return "redirect:/member/mypage";
+            return "/exception/member/mypage";
         }else{
             return "error";
         }
@@ -181,15 +177,11 @@ public class LoginController {
 
     @GetMapping("/user/update")
     public String update(String id, HttpSession session, Model model) {
-
         if (id == null) {
             id = (String) session.getAttribute("id");
         }
-
         LoginDTO dto = service.read(id);
-
         model.addAttribute("dto", dto);
-
         return "/user/update";
     }
 

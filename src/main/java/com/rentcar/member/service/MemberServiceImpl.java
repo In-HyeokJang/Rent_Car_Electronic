@@ -21,12 +21,12 @@ public class MemberServiceImpl implements MemberService {
 
     @Autowired
     private MemberMapper mapper;
-
-
+    
     @Override
-    public MemberDTO mypage(String id) {
-        return mapper.mypage(id);
+    public LoginDTO mypage(String id) {
+    return mapper.mypage(id);
     }
+
 
     @Override
     public String reservation(String id) {

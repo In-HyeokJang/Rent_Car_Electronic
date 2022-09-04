@@ -48,7 +48,7 @@
 
         <div class="carimg">
           <div class="col-sm-6">
-            <img src="${dto.carimage}" class="img-rounded" width="400px" height="260px"">
+            <img src="/carinfo/storage/${dto.carimage}" class="img-rounded" width="400px" height="260px"">
       </div>
     </div>
 

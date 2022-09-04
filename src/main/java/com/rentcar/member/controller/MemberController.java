@@ -1,5 +1,6 @@
 package com.rentcar.member.controller;
 
+import com.rentcar.login.model.LoginDTO;
 import com.rentcar.member.model.CarConditionDTO;
 import com.rentcar.member.model.CarInfo1DTO;
 import com.rentcar.member.model.MemberDTO;
@@ -9,7 +10,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 
@@ -42,26 +45,7 @@ public class MemberController {
             model.addAttribute("dto1", dto1);
             model.addAttribute("dto2", dto2);
         }
-
-
         return "/reservation";
-    }
-
-
-    @GetMapping("/mypage")
-    public String mypage(HttpSession session, Model model){
-        String id = (String) session.getAttribute("id");
-        System.out.println("@@@@@@@@@@@@@@@@@@"+id);
-        if (id == null) {
-            return "redirect:/user/login";
-        } else {
-            MemberDTO dto = service.mypage(id);
-
-            model.addAttribute("dto", dto);
-        }
-
-
-        return "/mypage";
     }
 
 
