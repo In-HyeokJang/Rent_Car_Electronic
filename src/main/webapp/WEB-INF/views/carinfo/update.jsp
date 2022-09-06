@@ -9,9 +9,6 @@
       <link rel="stylesheet" type="text/css" href="/css/carinfo/update.css">
       <link rel="stylesheet" type="text/css" href="/css/common.css">
     </head>
-
-
-
     <body>
 
       <div class="container">
@@ -23,13 +20,13 @@
 
         <input type="hidden" class="form-control" id="carnumber" name="carnumber" value="${dto.carnumber}">
           <h1 class="h1">차 정보 수정</h1>
-          <img class="img" src="${dto.carimage}" style="width:400px;" , height="323px;" ,
+          <img class="img" src="/carinfo/storage/${dto.carimage}" style="width:400px;" , height="323px;" ,
             margin="90px auto 0 250px">
 
 
           <div class="update">
 
-            <div class="form-group">
+
               <div class="form-group">
                 <label class="control-label col-sm-2" for="carnumber">Car Number : </label>
                   ${dto.carnumber}
@@ -84,11 +81,9 @@
             </div>
           </div>
           <div class="button">
-
-            <a href="javascript:history.back()">
-                뒤로</a>
             <button class="btn btn-default">수정</button>
-            <button type="reset" class="btn btn-default">취소</button>
+            <a href="javascript:history.back()">
+                            뒤로</a>
           </div>
 
         </form>

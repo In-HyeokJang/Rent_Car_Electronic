@@ -62,38 +62,24 @@
 	  if(jumin==''){
 		  alert("운전면허증 확인 버튼을 눌러주새요.");
 	  }else{
-
         var checknum = new Array(2,3,4,5,6,7,8,9,2,3,4,5);
-
         var sum = 0;
-
         for(var i=0; i<12; i++) {
             sum += (jumin.charAt(i) - '0') * checknum[i];
         }
         var num2 = sum % 11;
         var result = 11 - num2;
-
-
         	if(result == jumin.charAt(12)-'0') {
-
         	  alert("운전면허증 확인 완료되었습니다.");
-
            document.getElementById("license2").disabled = true;
            document.getElementById("licInfo_btn").disabled = true;
            document.getElementById("jumin_btn").disabled = true;
-
-
         		}else {
-
         		alert("유효하지 않은 운전면허증입니다. 회원가입을 하실 수 없습니다.");
         		location.reload(true);
-
         		}
        }
  }
-
-
-
   function idCheck(id){
 	  if(id==''){
 		  alert("아이디를 입력하세요");
@@ -101,14 +87,11 @@
 	  }else{
 		  var url = "/exception/user/idcheck";
 		  var param = "id="+id;
-
 		  $.get(url, param, function(data, textStatus) {
-
 			  $("#idcheck").text(data.str);
 		  })
 	  }
   }
-
   function emailCheck(email){
 	  if(email==''){
 		  alert("email를 입력하세요");

@@ -104,7 +104,6 @@
               <h2>차량 준비중 입니다.</h2>
             </div>
           </c:when>
-
           <c:otherwise>
             <div class="row" id="row">
               <c:forEach var="dto" items="${list}">

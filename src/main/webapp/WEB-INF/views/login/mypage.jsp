@@ -1,155 +1,120 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-            <%@ taglib prefix="util" uri="/ELFunctions" %>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+  <!DOCTYPE html>
+  <html style="font-size: 16px;" lang="en">
 
-                <!DOCTYPE html>
-                <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="나의 정보">
+    <meta name="description" content="">
+    <title>Home</title>
+    <script class="u-script" type="text/javascript" src="/js/member/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/member/nicepage.js" defer=""></script>
 
-                <head>
-                    <title>상품메인페이지</title>
-                    <meta charset="utf-8">
-                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-                    <link rel="stylesheet" type="text/css" href="/css/common.css">
-                    <script type="text/javascript">
+    <style>
+      .info {
+        margin-left: 400px;
+      }
+      .layout {
+        display: flex;
+        justify-content: center
+      }
+    </style>
+  </head>
 
-                        function del(carnumber) {
-                            if (confirm("정말삭제하시겠습니까?")) {
-                                let url = "/admin/carinfo/delete/" + carnumber;
-                                location.href = url;
-                            }
-                        }
+  <body data-home-page="Home.html"
+   data-home-page-title="Home"
+    class="u-body u-xl-mode" 
+    data-lang="en">
 
-                        function createwindow() {
-                            let windowObjectReference;
-                            let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
-                            windowObjectReference = window.open("/admin/carinfo/create", "mozillaTab", windowFeatures);
-                        }
+    <div class="layout">
+    <section class="u-clearfix u-section-1" id="sec-c9d0">
+      
+        <div class="u-table u-table-responsive u-table-1">
 
-                    </script>
-                    <style>
-                        #row {
-                            display: flex;
-                            justify-content: center;
-                        }
+        <img class="u-image u-image-default u-preserve-proportions u-image-1"
+          src="/images/SJ/mypage/premium-icon-member-card-3945150.png" width="250" height="200">
 
-                        .search {
-                            display: flex;
-                            justify-content: center;
-                            margin-bottom: 10px;
-                            margin-top: 10px;
-                        }
-
-                        .carlist {
-                            margin-left: 40%;
-                        }
-
-                        .col-sm-3 {
-                            justify-content: center;
-                            margin: 15px;
-                            font-size: 1.6rem;
-                        }
-
-                        .check {
-                            background-color: skyblue;
-                            color: black;
-                        }
-
-                        .control {
-                            height: auto;
-                            border: 1px solid #bfc9d4;
-                            color: #3b3f5c;
-                            letter-spacing: 1px;
-                            padding: 0.35rem 1.25rem;
-                            border-radius: 6px;
-                        }
-
-                        .create {
-                            margin-left: 10px;
-                        }
-                    </style>
-                </head>
-
-                <body>
-
-                    <div class="container">
-                        <div class="carlist">
-                            <h2>C A R S L I S T</h2>
-                        </div>
-                        <div class="search">
-                            <div class="search1">
-                                <form class="form-inline" action="./list">
-                                    <div class="form-group">
-                                        <select class="control" name="col">
-                                            <option value="category" <c:if test="${col=='category'}"> selected </c:if>>차
-                                                종</option>
-                                            <option value="carname" <c:if test="${col=='carname'}"> selected </c:if>>차이름
-                                            </option>
-
-                                            <option value="total" <c:if test="${col=='total'}"> selected </c:if>>
-                                                전체출력</option>
-                                        </select>
-                                    </div>
-                            </div>
-                            <!--search1 end div-->
-                            <div class="form-group">
-                                <input type="text" class="control" placeholder="Enter Category" name="word"
-                                    value="${word}">
+        <h3 class="u-text u-text-default u-text-1">${dto.mname} 님의</h3>
+<h3 class="u-text u-text-default u-text-palette-1-base u-text-2">회 원 정 보</h3>
+        <div class="info">
+          <a href="/exception/user/update"
+            class="u-border-none u-btn u-btn-round u-button-style u-radius-30 u-btn-1">&nbsp;정보 수정</a>
+            <a href="/exception/user/reservationinfo"
+                        class="u-border-none u-btn u-btn-round u-button-style u-radius-30 u-btn-1">&nbsp;예약/이용내역</a>
+        </div>
 
 
-                                <button type="submit" class="btn btn-default">검색</button>
+        <h2 class="u-text u-text-default u-text-3">나의 정보</h2>
 
-                                <c:if test="${sessionScope.grade == 'A'}">
-                                    <button class="btn btn-defaul" onclick="createwindow()">Car Create</button>
-                                </c:if>
-                            </div>
-                            </form>
+        
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="13.86%">
+              <col width="86.14%">
+            </colgroup>
+            <thead class="u-black u-table-header u-table-header-1">
+              <tr style="height: 75px;">
+                <th
+                  class="u-align-left u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-palette-1-light-1 u-table-cell u-table-cell-1">
+                  아이디</th>
+                <th
+                  class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell u-white u-table-cell-2">
+                  ${dto.id}</th>
+              </tr>
+            </thead>
+            <tbody class="u-table-alt-grey-5 u-table-body">
+              <tr style="height: 75px;">
+                <th
+                  class="u-align-left u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-first-column u-palette-1-light-1 u-table-cell u-table-cell-3">
+                  이름</th>
+                <th class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell u-white u-table-cell-2">${dto.mname}
+                </th>
+              </tr>
+              <tr style="height: 77px;">
+                              <th
+                                class="u-align-left u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-first-column u-palette-1-light-1 u-table-cell u-table-cell-3">
+                                전화번호</th>
+                              <th class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell u-white u-table-cell-2">${dto.phone}
+                              </th>
+                            </tr>
+              <tr style="height: 76px;">
+                <th
+                  class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-first-column u-palette-1-light-1 u-table-cell u-table-cell-5">
+                  이메일</th>
+                <th
+                  class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell u-white u-table-cell-6">
+                  ${dto.email}</th>
+              </tr>
+              <tr style="height: 76px;">
+                <th
+                  class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-first-column u-palette-1-light-1 u-table-cell u-table-cell-7">
+                  주소</th>
+                <th class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">
+                ${dto.address1} ${dto.address2}</th>
+              </tr>
+              <tr style="height: 76px;">
+                <th
+                  class="u-border-2 u-border-grey-60 u-border-no-left u-border-no-right u-first-column u-palette-1-light-1 u-table-cell u-table-cell-9">
+                  라이센스</th>
+                <th
+                  class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell u-white u-table-cell-10">
+                  ${dto.license}</th>
+              </tr>
+              <tr style="height: 76px;">
+                              <th
+                                class="u-border-2 u-border-grey-60 u-border-no-left u-border-no-right u-first-column u-palette-1-light-1 u-table-cell u-table-cell-9">
+                                적립포인트</th>
+                              <th
+                                class="u-border-2 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell u-white u-table-cell-10">
+                                포인트 추가해야함</th>
+                            </tr>
+            </tbody>
+          </table>
+        </div>
+      
+    </section>
+    </div>
+  </body>
 
-                        </div>
-                        <!--search end div-->
-                        <c:choose>
-                            <c:when test="${empty list}">
-                                <div class="row">
-                                    <h2>차량 준비중 입니다.</h2>
-                                </div>
-                            </c:when>
-                            <c:otherwise>
-                                <div class="row" id="row">
-                                    <c:forEach var="dto" items="${list}">
-                                        <div class="col-sm-3">
-                                            <h1> ${dto.carname }</h1>
-
-                                            <a href="/user/carinfo/read/${dto.carnumber}" class="btn btn-defaul">
-                                                <img src="/carinfo/storage/${dto.carimage}" class="img-thumbnail"
-                                                    width="350" height="300"></a>
-
-                                            <p><b>차 번호 : ${dto.carnumber}</b><br>
-                                                <b>${dto.category} | ${dto.carseate }</b> |
-                                                <b>${dto.caryearmodel}</b><br>
-                                                <b>차 위치 : ${dto.carpoint}</b><br>
-                                                <b>차 렌트비용(시간당) : ${dto.rentcost}\</b>
-                                            </p>
-
-                                            <c:if test="${sessionScope.grade == 'A'}">
-
-                                                <a href="javascript:del('${dto.carnumber}')" class="btn btn-defaul">Car
-                                                    Delete
-                                                </a>
-                                            </c:if>
-                                        </div>
-
-                                    </c:forEach>
-                                </div>
-
-                            </c:otherwise>
-                        </c:choose>
-
-                        <div>
-                            ${paging}
-                        </div>
-
-                    </div>
-                </body>
-
-                </html>
+  </html>

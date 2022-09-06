@@ -29,8 +29,6 @@
         }
       </style>
       <script type="text/javascript">
-
-
         function emailCheck(email) {
           //alert(email);
           if (email == '') {
@@ -122,7 +120,13 @@
           <h1 align="center">회원정보 수정 <br>
             <p>가입 시 입력한 회원정보입니다.</p>
           </h1><br><br><br>
-          <form class="form-horizontal" action="update" method="post" name='frm' onsubmit="return inCheck(this)">
+
+          <form class="form-horizontal"
+          action="/user/update"
+          method="post"
+          name='frm'
+          onsubmit="return inCheck(this)">
+
             <input type="hidden" name="id" value="${dto.id}">
 
             <div class="info_2">
@@ -131,24 +135,28 @@
                 <input type="text" class="form-control" id="id" value="${dto.id}" name="id">
               </div>
             </div>
+
             <div class="info_2">
               <label class="control-label col-sm-2" for="mname">이름</label>
               <div class="col-sm-4">
                 <input type="text" class="form-control" id="mname" value="${dto.mname}" name="mname">
               </div>
             </div>
+
             <div class="info">
               <label class="control-label col-sm-2" for="license">운전면허번호</label>
               <div>
                 <input type="text" class="form-control" id="license" value="${dto.license}" name="license" readonly>
               </div>
             </div>
+
             <div class="info_2">
               <label class="control-label col-sm-2" for="phone"><span id="need">*</span> 전화번호</label>
               <div class="col-sm-4">
                 <input type="text" class="form-control" id="phone" value="${dto.phone}" name="phone">
               </div>
             </div>
+
             <div class="info_2">
               <label class="control-label col-sm-2" for="email"><span id="need">*</span> 이메일</label>
               <div id="emailcheck"></div>
@@ -157,6 +165,7 @@
                 <input type="email" class="form-control" id="email" value="${dto.email}" name="email">
               </div>
             </div>
+
             <div class="info_2">
               <label class="control-label col-sm-2" for="sample6_postcode">우편번호</label>
               <button type="button" class="cre_btn2" onclick="sample6_execDaumPostcode()">주소검색</button>
@@ -164,6 +173,7 @@
                 <input type="text" class="form-control" name="zipcode" id="sample6_postcode" value="${dto.zipcode}">
               </div>
             </div>
+
             <div class="info_2">
               <label class="control-label col-sm-2" for="sample6_address">주소</label>
               <div class="col-sm-6">
@@ -173,12 +183,12 @@
               </div>
             </div>
 
-
             <div align="center">
               <br><br>
               <button type="submit" class="agreebtn">수정</button>
               <button type="button" class="agreebtn" onclick="history.back()">취소</button>
             </div>
+
             <c:choose>
               <c:when test="${not empty sessionScope.id && sessionScope.grade == 'H'}">
                 <div>
@@ -186,6 +196,7 @@
                 </div>
               </c:when>
             </c:choose>
+
           </form>
 
           <br><br>

@@ -1,13 +1,14 @@
 package com.rentcar.login.service;
 
 import com.rentcar.login.model.LoginDTO;
+import com.rentcar.member.model.MemberDTO;
 
 import java.util.List;
 import java.util.Map;
 
 public interface LoginService {
+
   LoginDTO mypage(String id);
-  
   int loginCheck(Map<String, String> map);
 
   Map getGrade(String id);

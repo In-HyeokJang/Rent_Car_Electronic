@@ -33,6 +33,19 @@ public class LoginController {
     private LoginService service;
 
 
+
+    @GetMapping("/user/reservationinfo")
+    public String resvation(HttpSession seesion, Model model){
+        String id = (String) seesion.getAttribute("id");
+        if(id == null){
+            return "redirect:/user/login";
+        }else {
+            LoginDTO dto = service.mypage(id);
+//            mypage 수정 -> reservation
+            model.addAttribute("dto", dto);
+        }
+        return "/user/reservationinfo";
+    }
     @GetMapping("/user/mypage")
     public String mypage(HttpSession seesion, Model model){
         String id = (String) seesion.getAttribute("id");
@@ -165,11 +178,9 @@ public class LoginController {
     @PostMapping("/user/update")
     public String update(LoginDTO dto, Model model, RedirectAttributes ra){
         int cnt = service.update(dto);
-
         if (cnt == 1) {
             model.addAttribute("id", dto.getId());
-
-            return "/exception/member/mypage";
+            return "/";
         }else{
             return "error";
         }

@@ -65,6 +65,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="update" parameterType="com.rentcar.login.model.LoginDTO">
 		update user
 		set
+		id = #{id},
+		mname = #{mname},
 		phone = #{phone},
 		email = #{email},
 		zipcode = #{zipcode},
